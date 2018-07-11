@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-06-13T06:51:06.731Z</updated>
+  <updated>2018-07-10T23:55:32.371Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,281 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>运行级别详解</title>
+    <link href="http://yoursite.com/2018/07/10/8%E3%80%81%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB%E8%AF%A6%E8%A7%A3/"/>
+    <id>http://yoursite.com/2018/07/10/8、运行级别详解/</id>
+    <published>2018-07-10T11:54:49.145Z</published>
+    <updated>2018-07-10T23:55:32.371Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="运行级别详解"><a href="#运行级别详解" class="headerlink" title="运行级别详解"></a>运行级别详解</h3><ul><li><strong>运行级别说明</strong>：</li></ul><ol start="0"><li>关机</li><li>单用户【找回root丢失密码】</li><li>多用户状态没有网络服务</li><li><strong>多用户状态有网络服务</strong>（常用）</li><li>系统未使用保留给用户（不使用）</li><li><strong>图形界面</strong>（常用）</li><li>系统重启</li></ol><ul><li><strong>基本语法</strong>：</li></ul><ol><li>切换运行级别：init [0 1 3 5]  </li><li>查看当前级别: vim /etc/inittab (然后可以进入insert模式修改初始运行级别)</li><li>总结进入单用户模式：开机 -&gt; enter键进入界面 -&gt; 输入e -&gt; 在界面中选中第二行再输入e -&gt; 然后输入 空格1 -&gt; 再次输入b进入单用户模式，便可以进行相应操作，passwd root 修改密码等等 </li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;运行级别详解&quot;&gt;&lt;a href=&quot;#运行级别详解&quot; class=&quot;headerlink&quot; title=&quot;运行级别详解&quot;&gt;&lt;/a&gt;运行级别详解&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;运行级别说明&lt;/strong&gt;：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&quot;0
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>用户管理</title>
+    <link href="http://yoursite.com/2018/07/10/7%E3%80%81%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/"/>
+    <id>http://yoursite.com/2018/07/10/7、用户管理/</id>
+    <published>2018-07-10T11:54:49.143Z</published>
+    <updated>2018-07-10T23:55:05.387Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h3><ul><li>用户：</li></ul><ol><li>添加用户：useradd [选项] 用户名，如useradd xq xq用户文件夹会在home目录生成；</li><li>指定用户家目录：useradd -d 指定目录，如useradd -d xm /home/xm；</li><li>指定用户密码： passwd 用户名，如passwd xm；</li><li>删除用户保留家目录：userdel 用户名；</li><li>删除用户及其家主目录：userdel -r 用户名（一般不删；</li><li>查询用户信息：id 用户名；</li><li>切换用户：su - 用户名，当权限高的用户切换到权限底的，不需要密码，反之需要，返回到切换之前的用户用 exit指令；</li><li>查看当前用户：whoami；</li></ol><ul><li>用户组：</li></ul><ol><li>创建组: groupadd 组名；</li><li>删除组： groupdel 组名；</li><li>增加用户时直接跟上组： useradd -g 用户组 用户名，如 useradd -g wudang zwj；</li><li>修改用户组: usermod -g 用户组 用户名；</li></ol><ul><li>用户和组相关文件：</li></ul><ol><li>/etc/passwd文件： 用户的配置文件，记录用户的各种信息。 <strong>每行的含义：用户名：口令:用户标识符号：组标识号：注释性描述：主目录：登录shell</strong>；</li><li>/etc/shadow文件：口令配置文件。  <strong>每行含义：登录名：加密口令：最后一次修改时间：最小时间间隔：最大时间间隔：警告时间：不活动时间：失效时间：标志</strong>；</li><li>/etc/group文件：组的配置文件，记录Linux包含组的信息。<strong>每行含义：组名：口令：组标识号：组内用户列表</strong></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;用户管理&quot;&gt;&lt;a href=&quot;#用户管理&quot; class=&quot;headerlink&quot; title=&quot;用户管理&quot;&gt;&lt;/a&gt;用户管理&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;用户：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;添加用户：useradd [选项] 用户名，如useradd x
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>关机重启和用户登录</title>
+    <link href="http://yoursite.com/2018/07/10/6%E3%80%81%E5%85%B3%E6%9C%BA%E9%87%8D%E5%90%AF%E5%92%8C%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95/"/>
+    <id>http://yoursite.com/2018/07/10/6、关机重启和用户登录/</id>
+    <published>2018-07-10T11:54:49.141Z</published>
+    <updated>2018-07-10T23:54:45.462Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="关机重启和用户登录"><a href="#关机重启和用户登录" class="headerlink" title="关机重启和用户登录"></a>关机重启和用户登录</h3><ol><li>关机命令：</li></ol><ul><li>shutdown -h now : 立即关机</li><li>shutdown -h 1 : 1分钟之后关机</li><li>halt :  停机等同于关机</li></ul><ol start="2"><li>重启命令：</li></ol><ul><li>reboot : 重启</li><li>shoutdown -r now : 立即重启</li><li>sync :  把内存数据同步到磁盘（关机重启时都应当执行sync指令防止丢失）</li></ul><ol start="3"><li>用户登录和注销</li></ol><ul><li>登录时少用root账号登录，可以用普通用户登录，登录后用“su - 用户名”切换，</li><li>logout 注销远程登录用户</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;关机重启和用户登录&quot;&gt;&lt;a href=&quot;#关机重启和用户登录&quot; class=&quot;headerlink&quot; title=&quot;关机重启和用户登录&quot;&gt;&lt;/a&gt;关机重启和用户登录&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;关机命令：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;shutdown -
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>vi和vim编辑器</title>
+    <link href="http://yoursite.com/2018/07/10/5%E3%80%81vi%E5%92%8Cvim%E7%BC%96%E8%BE%91%E5%99%A8/"/>
+    <id>http://yoursite.com/2018/07/10/5、vi和vim编辑器/</id>
+    <published>2018-07-10T11:54:49.139Z</published>
+    <updated>2018-07-10T23:54:26.639Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="vi和vim编辑器"><a href="#vi和vim编辑器" class="headerlink" title="vi和vim编辑器"></a>vi和vim编辑器</h3><ol><li>三种模式：</li></ol><ul><li>插入模式，编写内容，按下i进入；</li><li>命令行模式,提供指令存储、退出、读取、替换，按下：或者/；</li><li>正常模式，可以移动光标，删除字符，复制粘贴，按下ESC进入，</li></ul><ol start="2"><li>快捷键使用：</li></ol><ul><li>yy拷贝当前行，5yy拷贝当前向下5行，p（粘贴），</li><li>dd删除当前行，</li><li>命令行模式下，/关键字，回车查找关键字，</li><li>G跳到文档最末行，gg跳到文档最初行，</li><li>正常模式下，u撤销，</li><li>：set nu 显示行号。输入20再输入shift+g跳到20行</li><li><a href="http://image55.360doc.com/DownloadImg/2012/11/0811/28079222_2.png" target="_blank" rel="noopener">vim/vi键盘图</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;vi和vim编辑器&quot;&gt;&lt;a href=&quot;#vi和vim编辑器&quot; class=&quot;headerlink&quot; title=&quot;vi和vim编辑器&quot;&gt;&lt;/a&gt;vi和vim编辑器&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;三种模式：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;插入模式，编写内容，
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>远程登录操作linux</title>
+    <link href="http://yoursite.com/2018/07/10/4%E3%80%81%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E6%93%8D%E4%BD%9Clinux%E5%92%8C%E4%B8%8A%E4%BC%A0%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/"/>
+    <id>http://yoursite.com/2018/07/10/4、远程登录操作linux和上传下载文件/</id>
+    <published>2018-07-10T11:54:49.136Z</published>
+    <updated>2018-07-10T23:53:57.640Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="远程登录操作linux"><a href="#远程登录操作linux" class="headerlink" title="远程登录操作linux"></a>远程登录操作linux</h3><ol><li>安装XShell5</li><li>打开终端，==ifconfig==命令获取linux系统Ip地址，</li><li>打开软件新建会话，填写协议ssh，IP地址，端口号22，然后连接，可以远程操作了</li><li>安装XFtp5<br>5.进入会话属性，填写IP地址，协议SFTP，端口号22，填写用户名（root），连接好了，这样可以远程交换文件了（乱码可以选项设置UTF-8编码）</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;远程登录操作linux&quot;&gt;&lt;a href=&quot;#远程登录操作linux&quot; class=&quot;headerlink&quot; title=&quot;远程登录操作linux&quot;&gt;&lt;/a&gt;远程登录操作linux&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;安装XShell5&lt;/li&gt;
+&lt;li&gt;打开终端，==if
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>centOS目录结构</title>
+    <link href="http://yoursite.com/2018/07/10/3%E3%80%81centOS%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84/"/>
+    <id>http://yoursite.com/2018/07/10/3、centOS目录结构/</id>
+    <published>2018-07-10T11:54:49.134Z</published>
+    <updated>2018-07-10T23:53:00.585Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="centOS目录结构"><a href="#centOS目录结构" class="headerlink" title="centOS目录结构"></a>centOS目录结构</h3><ul><li>/bin 存放经常使用的命令，</li><li>/sbin 存放系统管理员使用的系统管理程序，</li><li>/home 存放普通用户的主目录，</li><li>/root 系统管理员主目录，</li><li>/boot 存放启动linux的核心文件，如镜像文件，</li><li>/proc 虚拟目录，内存的映射，访问该目录获取系统信息，</li><li>/srv 存放一些服务启动需要提取的数据，</li><li>sys/ 安装了内核新出现的文件系统，</li><li>/tmp 存放一些临时文件，</li><li>/dev 类似windows设备管理器，把所有的硬件用文件形式存储，</li><li>/media 挂载着一些设备，例如U盘，光驱、、，</li><li>/mnt 提供临时挂载文件系统，外部的存储可以挂载到这个目录，诶share共享文件夹，</li><li>/opt 存放主机额外的安装软件，</li><li>/usr/local 另一个安装软件的目录，</li><li>/var 各种日志文件</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;centOS目录结构&quot;&gt;&lt;a href=&quot;#centOS目录结构&quot; class=&quot;headerlink&quot; title=&quot;centOS目录结构&quot;&gt;&lt;/a&gt;centOS目录结构&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;/bin 存放经常使用的命令，&lt;/li&gt;
+&lt;li&gt;/sbin 存
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>vmtools 实现文件共享</title>
+    <link href="http://yoursite.com/2018/07/10/2%E3%80%81vmtools%20%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E5%85%B1%E4%BA%AB/"/>
+    <id>http://yoursite.com/2018/07/10/2、vmtools 实现文件共享/</id>
+    <published>2018-07-10T11:54:49.132Z</published>
+    <updated>2018-07-10T23:52:13.657Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="vmtools-实现文件共享"><a href="#vmtools-实现文件共享" class="headerlink" title="vmtools 实现文件共享"></a>vmtools 实现文件共享</h3><ol><li>点击vm菜单-&gt;install vmware tools</li><li>在、root/桌面/vmware -tools-distrib/下，解压安装，然后reboot重启；</li><li>菜单设置-选项-共享文件夹share；</li><li>centOS的/mnt/hgfs/下为此文件夹，可以实现读写共享操作了；</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;vmtools-实现文件共享&quot;&gt;&lt;a href=&quot;#vmtools-实现文件共享&quot; class=&quot;headerlink&quot; title=&quot;vmtools 实现文件共享&quot;&gt;&lt;/a&gt;vmtools 实现文件共享&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;点击vm菜单-&amp;gt;insta
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>安装linux系统（centOS和VM）</title>
+    <link href="http://yoursite.com/2018/07/10/1%E3%80%81%E5%AE%89%E8%A3%85linux%E7%B3%BB%E7%BB%9F%EF%BC%88centOS%E5%92%8CVM%EF%BC%89/"/>
+    <id>http://yoursite.com/2018/07/10/1、安装linux系统（centOS和VM）/</id>
+    <published>2018-07-10T11:54:49.131Z</published>
+    <updated>2018-07-10T23:52:28.110Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="安装linux系统（centOS和VM）"><a href="#安装linux系统（centOS和VM）" class="headerlink" title="安装linux系统（centOS和VM）"></a>安装linux系统（centOS和VM）</h3><ol><li>先vm12安装，设置BIOS开启支持虚拟化（f2/f12）；</li><li>先创建虚拟机，不要存放centOS镜像，先设置硬件配置，然后再放入镜像文件；</li><li>centOS安装细节：</li></ol><ul><li>skip跳过检测过程；</li><li>主机名可以写集群hadoop1等等；</li><li>至少分三个区，/boot分区（200m）、/分区（根分区划分剩下所有的内存）、swap分区（交换分区跟物理内存差不多大小2g）；</li><li>自定义安装桌面</li><li>kdump（内存崩溃转储机制，用于生产模式）；</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;安装linux系统（centOS和VM）&quot;&gt;&lt;a href=&quot;#安装linux系统（centOS和VM）&quot; class=&quot;headerlink&quot; title=&quot;安装linux系统（centOS和VM）&quot;&gt;&lt;/a&gt;安装linux系统（centOS和VM）&lt;/h3&gt;&lt;
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>磁盘情况查询</title>
+    <link href="http://yoursite.com/2018/07/10/14%E3%80%81%E7%A3%81%E7%9B%98%E6%9F%A5%E8%AF%A2/"/>
+    <id>http://yoursite.com/2018/07/10/14、磁盘查询/</id>
+    <published>2018-07-10T11:54:49.130Z</published>
+    <updated>2018-07-10T23:57:25.144Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="磁盘情况查询"><a href="#磁盘情况查询" class="headerlink" title="磁盘情况查询"></a>磁盘情况查询</h3><ol><li><p>查询系统整体磁盘使用情况:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df -lh</span><br></pre></td></tr></table></figure></li><li><p>查询所有目录文件明细汇总加上计量单位：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">du -ach --max-depth=1 /opt</span><br></pre></td></tr></table></figure></li></ol><p>（参数： -s：指定目录占用大小； -h： 带计量单位； -a：含文件； –max-depth=1： 子目录深度； -c： 列出明细的同时，增加汇总值）</p><h3 id="磁盘情况实用指令"><a href="#磁盘情况实用指令" class="headerlink" title="磁盘情况实用指令"></a>磁盘情况实用指令</h3><ul><li>统计/home文件夹下文件的个数：</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -l /home | grep &quot;^-&quot; | wc -l</span><br></pre></td></tr></table></figure><ul><li><p>统计/home文件夹下目录的个数：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -l /home | grep &quot;^d&quot; | wc -l</span><br></pre></td></tr></table></figure></li><li><p>统计/home文件夹下文件的个数，包括子文件夹里的：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -lR /home | grep &quot;^-&quot; | wc -l</span><br></pre></td></tr></table></figure></li><li><p>统计/home文件夹下目录的个数，包括子文件夹里的：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -lR /home | grep &quot;^d&quot; | wc -l</span><br></pre></td></tr></table></figure></li></ul><h3 id="以树状显示目录"><a href="#以树状显示目录" class="headerlink" title="以树状显示目录"></a>以树状显示目录</h3><ol><li><p>安装tree：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum intall tree</span><br></pre></td></tr></table></figure></li><li><p>查看目录：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tree 目录</span><br></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;磁盘情况查询&quot;&gt;&lt;a href=&quot;#磁盘情况查询&quot; class=&quot;headerlink&quot; title=&quot;磁盘情况查询&quot;&gt;&lt;/a&gt;磁盘情况查询&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;查询系统整体磁盘使用情况:&lt;/p&gt;
+&lt;figure class=&quot;highlight pl
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>权限基本介绍</title>
+    <link href="http://yoursite.com/2018/07/10/11%E3%80%81%E6%9D%83%E9%99%90%E8%AF%A6%E8%A7%A3/"/>
+    <id>http://yoursite.com/2018/07/10/11、权限详解/</id>
+    <published>2018-07-10T11:54:49.129Z</published>
+    <updated>2018-07-10T23:57:01.107Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="权限基本介绍"><a href="#权限基本介绍" class="headerlink" title="权限基本介绍"></a>权限基本介绍</h3><ul><li>-rwxr–r–.  1 root root   268 6月  24 20:34 info.txt：对以上ls -l显示的内容想介绍（r=4：读，w=2：写，x=1:执行）</li><li><p>查看用户列表： </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/passwd</span><br></pre></td></tr></table></figure></li><li><p>查看用户组列表：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/group</span><br></pre></td></tr></table></figure></li></ul><ol><li>第0位确定文件类型（d, -, l, c, b）d： 目录、-： 普通文件、c: 字符设备，鼠标键盘、b： 块文件，硬盘、l： 软链接</li><li>第1-3位确定该文件所有者拥有的权限</li><li>第4-6位确定文件所属组用户组拥有的权限</li><li>第7-9位确定其他用户拥有该文件的权限</li><li>1 所在位置表示如果是文件显示硬链接个数，如果是目录则表示目录子目录的个数</li><li>第一个root位置表示用户，第二个表示组</li><li>268位置表示文件大小（字节），如果是目录则表示为4096</li><li>最后的日期表示该文件最后修改的日期</li></ol><h3 id="权限管理"><a href="#权限管理" class="headerlink" title="权限管理"></a>权限管理</h3><h5 id="1-修改权限-chmod："><a href="#1-修改权限-chmod：" class="headerlink" title="1. 修改权限-chmod："></a>1. 修改权限-chmod：</h5><p>（u: 所有者，g：所有组， o： 其他人， a: 所有人 ）</p><ul><li>chmod u=rwx,g=rx,o=x 文件目录名： 变更权限</li><li>chmod o+w 文件目录名： 给用户组加上一个写权限</li><li>chmod a-x 文件目录名： 给用户减去一个执行权限</li><li>chmod 751 文件目录名： 相当于chmod u=rwx,g=rx,o=x</li></ul><h5 id="2-修改文件所有者-chown："><a href="#2-修改文件所有者-chown：" class="headerlink" title="2. 修改文件所有者-chown："></a>2. 修改文件所有者-chown：</h5><ul><li>chown 用户名 文件目录名： 改变用户所有者</li><li>chown 用户名:用户所在组名 文件目录名： 改变用户所有者和所有组（chown root:root a.txt）</li><li>chown -R root zjs/： 递归将zjs/目录下的所有文件所有者改成root</li></ul><h5 id="3-修改文件所在组-chgrp："><a href="#3-修改文件所在组-chgrp：" class="headerlink" title="3. 修改文件所在组-chgrp："></a>3. 修改文件所在组-chgrp：</h5><ul><li>chgrp 用户组名 文件目录名： 改变文件的所有组</li><li>chgrp -R root zjs/： 递归将目录zjs/下所有文件组名变更成root组</li></ul><h3 id="注说明：用户想要修改别的用户所属文件，必须对其开放本组权限，或者其他组权限，当用户需要进入别的用户家目录来修改文件时，必须给家目录至少rx读和执行操作，才能进入。如：chmod-g-rx-zjs"><a href="#注说明：用户想要修改别的用户所属文件，必须对其开放本组权限，或者其他组权限，当用户需要进入别的用户家目录来修改文件时，必须给家目录至少rx读和执行操作，才能进入。如：chmod-g-rx-zjs" class="headerlink" title="注说明：用户想要修改别的用户所属文件，必须对其开放本组权限，或者其他组权限，当用户需要进入别的用户家目录来修改文件时，必须给家目录至少rx读和执行操作，才能进入。如：chmod g=rx zjs/"></a>注说明：用户想要修改别的用户所属文件，必须对其开放本组权限，或者其他组权限，当用户需要进入别的用户家目录来修改文件时，必须给家目录至少rx读和执行操作，才能进入。如：chmod g=rx zjs/</h3>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;权限基本介绍&quot;&gt;&lt;a href=&quot;#权限基本介绍&quot; class=&quot;headerlink&quot; title=&quot;权限基本介绍&quot;&gt;&lt;/a&gt;权限基本介绍&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;-rwxr–r–.  1 root root   268 6月  24 20:34 info.t
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>组管理</title>
+    <link href="http://yoursite.com/2018/07/10/10%E3%80%81%E7%BB%84%E7%AE%A1%E7%90%86/"/>
+    <id>http://yoursite.com/2018/07/10/10、组管理/</id>
+    <published>2018-07-10T11:54:49.128Z</published>
+    <updated>2018-07-10T23:56:44.374Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="组管理"><a href="#组管理" class="headerlink" title="组管理"></a>组管理</h3><p>在linux中每个用户必须属于一个组，不能独立于组外，一般来说，谁创建了改文件，谁就是它的所有者，所在组，当然这些都可以通过指令修改。</p><ol><li>ls -lah: 查看目录下面所有文件的所有者，所在组等详细信息</li><li>chown 用户名 文件名： 修改文件的所有者</li><li>chgrp 组名 文件名： 修改文件的组名</li><li>usermod -g 组名 用户名：修改用户的所在组</li><li>usermod -d 目录名 用户名： 改变用户登录的初始目录</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;组管理&quot;&gt;&lt;a href=&quot;#组管理&quot; class=&quot;headerlink&quot; title=&quot;组管理&quot;&gt;&lt;/a&gt;组管理&lt;/h3&gt;&lt;p&gt;在linux中每个用户必须属于一个组，不能独立于组外，一般来说，谁创建了改文件，谁就是它的所有者，所在组，当然这些都可以通过指令修改
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>实用指令</title>
+    <link href="http://yoursite.com/2018/07/10/9%E3%80%81%E5%AE%9E%E7%94%A8%E6%8C%87%E4%BB%A4/"/>
+    <id>http://yoursite.com/2018/07/10/9、实用指令/</id>
+    <published>2018-07-10T11:54:49.127Z</published>
+    <updated>2018-07-10T23:55:56.222Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="实用指令"><a href="#实用指令" class="headerlink" title="实用指令"></a>实用指令</h1><h3 id="帮助指令"><a href="#帮助指令" class="headerlink" title="帮助指令"></a>帮助指令</h3><ol><li>man [命令或配置文件]</li><li>help [命令或配置文件]</li><li>lsblk（老师不离开）：查看当前系统分区情况</li></ol><h3 id="文件目录类指令"><a href="#文件目录类指令" class="headerlink" title="文件目录类指令"></a>文件目录类指令</h3><ol><li>pwd：显示当前目录的绝对路径</li><li>ls： 显示当前目录文件信息（ls -la 列表显示并且显示隐藏文件）</li><li>cd： 切换目录。常有cd ~或者cd：回到家目录、cd ..：返回上级、cd -：返回到切换前的目录（相对路径：cd zjs/ ，从当前目录开始定位需要到的目录去；绝对路径：cd /home/zjs，从根目录开始定位）</li><li>mkdir： 创建目录。mkdir -p /home/1/2/3 ：创建多级目录。</li><li>rmdir： 删除空目录。（只能删除空目录，若要删除非空目录可以用 rm -rf 目录）</li><li>touch： 创建空文件。可以一次性创建多个文件: touch 1.txt 2.txt </li><li>cp：复制文件到指定目录。cp -r zwj/ shao/ : 递归复制这个文件、 \cp -r zwj/ shao/ : 强制覆盖</li><li>rm： 删除文件或目录。rm -rf zjs/：递归删除整个zjs目录强制执行不提示;(rm test *.sh : 删除后缀为.sh的全部文件)</li><li>mv： 移动文件与目录或者重命名。mv oldNameFile newNameFile：重命名、 mv 1/1.txt 2/: 把1文件下1.txt文件移动到2文件夹下</li><li>cat： 查看文件（只读）。cat -n /etc/profile | more ：-n显示行号、 | more 分页显示</li><li>more： 基于vi编辑全屏显示文件内容</li><li>less： 与more类似，但是更强大，用于查看大型文件（空格键：下翻页，pageup：上翻页，/字符串：向下查找，？字符串：向上找，q:退出）<ol start="13"><li><strong>&gt; 和 &gt;&gt;</strong> : “&gt;”输出重定向，指定内容到什么文件中去，没有就创建，存在就覆盖。”&gt;&gt;”追加，不会覆盖内容，加入文件尾部。</li></ol><ul><li>ls -l &gt; a.txt：将列表显示的内容写入到a.txt文件中，若&gt;&gt;则追加</li><li>cat 文件1 &gt; 文件2 : 将文件1的内容覆盖到文件2中，若&gt;&gt;则追加</li><li>echo “内容” &gt; a.txt ： 将写好的内容覆盖到a.txt文件中，若&gt;&gt;则追加</li></ul></li><li>echo：输出内容到控制台。echo  $PATH： 输出环境变量路径</li><li>head： 用于查看文件头部内容，默认10行。head -n 5 文件 ：查看文件头部前5行内容</li><li>tail： 用于输出文件尾部内容，默认10行。tail -n 5 文件 ：查看文件尾部前5行内容、<strong>tail -f 文件 :实时追踪文档的更新，工作常常使用的命令</strong></li><li>ln： 软链接（快捷方式）。用法： ln -s 目录名 软连接名；删除软链接： rm -f 软链接名（不是目录不能加/，注意不要用-rf，会递归删除链接指向目录下面的所有文件）</li><li>history： 查看已经执行过的全部历史命令。 history 10： 显示最近的10个命令；还可以直接通过行号直接调用此行命令: 如!235</li></ol><h3 id="时间日期类指令"><a href="#时间日期类指令" class="headerlink" title="时间日期类指令"></a>时间日期类指令</h3><ol><li><strong>date：显示当前具体时间</strong></li><li>date +%Y: 显示当前年</li><li>date +%m: 显示当前月</li><li>date +%d: 显示当前日</li><li>date “+%Y-%m-%d %H：%M：%S”：显示当前具体时间</li><li><strong>date -s “2018-06-25 10：46：32”： 设置时间</strong></li><li>cal： 显示当前日历。cal 2018：查看2018年的全部日历</li></ol><h3 id="搜素查找类指令"><a href="#搜素查找类指令" class="headerlink" title="搜素查找类指令"></a>搜素查找类指令</h3><p>1.find：从指定目录向下递归遍历各个子目录，将满足条件的显示。 <strong>find /home -name a.txt</strong> :在home目录下查找名字为a.txt的文件； <strong>find /opt -user xh</strong> : 在opt文件目录下查找用户名为xh的用户文件；<strong>find / -size +20M</strong>:在根目录下查找文件大小大于20M的文件（同理“-”是小于，无符号是等于）；find / -name *.txt: 查找所有以.txt结尾的文件</p><ol start="2"><li>locate：可以快速定位文件路径。它是基于数据库查询所以必须先建立数据库用<strong>updatedb</strong>指令创建数据库，然后<strong>locate a.txt</strong>：快速定位文件路径</li><li>grep与管道指令 | ：如 cat a.txt | grep -ni yes : 查找a.txt文件中yes所在的行并显示行号不区分大小写。-n 显示行号，-i 忽略大小写</li></ol><h3 id="压缩与解压缩类指令"><a href="#压缩与解压缩类指令" class="headerlink" title="压缩与解压缩类指令"></a>压缩与解压缩类指令</h3><ol><li>gzip： 压缩文件（不保留原来文件）。gzip a.txt：压缩文件a.txt</li><li>gunzip： 解压文件。gunzip a.txt.gz ：解压文件a.txt.gz</li><li>zip -r mypackage.zip /home/ : 递归压缩文件夹home为mypackage.zip</li><li>unzip -d /home/zjs/ mypackage.zip: 解压到指定目录中去</li><li>tar: 打包指令，最后打包的文件是 .tar.gz文件, 以下是选项的功能：</li></ol><ul><li>-c: 产生.tar打包文件</li><li>-v：显示详细信息</li><li>-f: 指定压缩后的文件名</li><li>-z：打包同时压缩</li><li>-x：解压。tar文件</li><li>例子：</li></ul><ol><li><strong>tar -zcvf a.tar.gz a.txt b.txt:</strong> 将文件a.txt和b.txt压缩成a.tar.gz</li><li><strong>tar -zcvf myhome.tar.gz /home/:</strong> 将/home文件压缩</li><li><strong>tar -zxvf a.tar.gz:</strong> 将a.tar.gz解压到当前目录</li><li><strong>tar -zxvf a.tar.gz -C /opt/:</strong> 将文件a.tar.gz解压到指定目录（前提必须此目录存在）</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;实用指令&quot;&gt;&lt;a href=&quot;#实用指令&quot; class=&quot;headerlink&quot; title=&quot;实用指令&quot;&gt;&lt;/a&gt;实用指令&lt;/h1&gt;&lt;h3 id=&quot;帮助指令&quot;&gt;&lt;a href=&quot;#帮助指令&quot; class=&quot;headerlink&quot; title=&quot;帮助指令&quot;&gt;&lt;/a
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>简历</title>

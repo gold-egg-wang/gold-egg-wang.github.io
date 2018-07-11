@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content=",," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -81,18 +81,17 @@
 
 
 
-<meta name="description" content="这是一个初始化的分类页面！">
-<meta name="keywords" content="Testing,Another Tag">
+<meta name="description" content="用户管理 用户：   添加用户：useradd [选项] 用户名，如useradd xq xq用户文件夹会在home目录生成； 指定用户家目录：useradd -d 指定目录，如useradd -d xm /home/xm； 指定用户密码： passwd 用户名，如passwd xm； 删除用户保留家目录：userdel 用户名； 删除用户及其家主目录：userdel -r 用户名（一般不删； 查">
 <meta property="og:type" content="website">
-<meta property="og:title" content="测试文章">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+<meta property="og:title" content="premier">
+<meta property="og:url" content="http://yoursite.com/categories/7、用户管理.html">
 <meta property="og:site_name" content="premier">
-<meta property="og:description" content="这是一个初始化的分类页面！">
+<meta property="og:description" content="用户管理 用户：   添加用户：useradd [选项] 用户名，如useradd xq xq用户文件夹会在home目录生成； 指定用户家目录：useradd -d 指定目录，如useradd -d xm /home/xm； 指定用户密码： passwd 用户名，如passwd xm； 删除用户保留家目录：userdel 用户名； 删除用户及其家主目录：userdel -r 用户名（一般不删； 查">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-11T00:37:14.157Z">
+<meta property="og:updated_time" content="2018-06-23T10:08:54.794Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="测试文章">
-<meta name="twitter:description" content="这是一个初始化的分类页面！">
+<meta name="twitter:title" content="premier">
+<meta name="twitter:description" content="用户管理 用户：   添加用户：useradd [选项] 用户名，如useradd xq xq用户文件夹会在home目录生成； 指定用户家目录：useradd -d 指定目录，如useradd -d xm /home/xm； 指定用户密码： passwd 用户名，如passwd xm； 删除用户保留家目录：userdel 用户名； 删除用户及其家主目录：userdel -r 用户名（一般不删； 查">
 
 
 
@@ -122,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/"/>
+  <link rel="canonical" href="http://yoursite.com/categories/7、用户管理.html"/>
 
 
 
 
 
-  <title>测试文章 | premier</title>
+  <title> | premier</title>
   
 
 
@@ -270,7 +269,7 @@
     <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">测试文章</h1>
+	<h1 class="post-title" itemprop="name headline"></h1>
 
 
 
@@ -282,14 +281,37 @@
       <div class="post-body">
         
         
-          <div class="category-all-page">
-            <div class="category-all-title">
-                暂无分类
-            </div>
-            <div class="category-all">
-              
-            </div>
-          </div>
+          <h3 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h3><ul>
+<li>用户：</li>
+</ul>
+<ol>
+<li>添加用户：useradd [选项] 用户名，如useradd xq xq用户文件夹会在home目录生成；</li>
+<li>指定用户家目录：useradd -d 指定目录，如useradd -d xm /home/xm；</li>
+<li>指定用户密码： passwd 用户名，如passwd xm；</li>
+<li>删除用户保留家目录：userdel 用户名；</li>
+<li>删除用户及其家主目录：userdel -r 用户名（一般不删；</li>
+<li>查询用户信息：id 用户名；</li>
+<li>切换用户：su - 用户名，当权限高的用户切换到权限底的，不需要密码，反之需要，返回到切换之前的用户用 exit指令；</li>
+<li>查看当前用户：whoami；</li>
+</ol>
+<ul>
+<li>用户组：</li>
+</ul>
+<ol>
+<li>创建组: groupadd 组名；</li>
+<li>删除组： groupdel 组名；</li>
+<li>增加用户时直接跟上组： useradd -g 用户组 用户名，如 useradd -g wudang zwj；</li>
+<li>修改用户组: usermod -g 用户组 用户名；</li>
+</ol>
+<ul>
+<li>用户和组相关文件：</li>
+</ul>
+<ol>
+<li>/etc/passwd文件： 用户的配置文件，记录用户的各种信息。 <strong>每行的含义：用户名：口令:用户标识符号：组标识号：注释性描述：主目录：登录shell</strong>；</li>
+<li>/etc/shadow文件：口令配置文件。  <strong>每行含义：登录名：加密口令：最后一次修改时间：最小时间间隔：最大时间间隔：警告时间：不活动时间：失效时间：标志</strong>；</li>
+<li>/etc/group文件：组的配置文件，记录Linux包含组的信息。<strong>每行含义：组名：口令：组标识号：组内用户列表</strong></li>
+</ol>
+
         
       </div>
       
@@ -307,6 +329,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -327,8 +353,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -347,7 +382,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -432,6 +467,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#用户管理"><span class="nav-number">1.</span> <span class="nav-text">用户管理</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -478,7 +529,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共4.4k字</span>
+  <span class="post-count">博客全站共766字</span>
 </div>
 
         
